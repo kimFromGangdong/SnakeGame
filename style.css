@@ -1,4 +1,31 @@
-.title {
-	font-weight: bold;
-	font-size: 30px;
+body{
+	height:100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	margin: 0;
+	background-color: black;
+}
+
+.game-board{
+	background-color: #CCC;
+	/*using vmin & vmax, either smaller height or width will be the standard for square*/
+	width: 100vmin;
+	height: 100vmin;
+	display: grid;
+	/* we want 21 squares and size differs as screen size changes */
+	grid-template-rows: repeat(21, 1fr);
+	grid-template-columns: repeat(21, 1fr);
+}
+
+.snake{
+	background-color: blue;
+	/* border also differs as screen size changes */
+	border: 0.5vmin solid black;
+}
+
+.food{
+	background-color: yellow;
+	border: 0.5vmin solid black;
 }
