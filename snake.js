@@ -1,20 +1,20 @@
 //snake.js contains all of the proporties of the snake
+import {getInputDirection} from "./input.js"
 
 export let SNAKE_SPEED = 2;
 const snakeBody = [
-	{ x: 10, y: 11 },
 	{ x: 11, y: 11 },
-	{ x: 12, y: 11 },
-	{ x: 13, y: 11 },
-	{ x: 14, y: 11 }
 ];
 
 export function update(){
+	const inputDirection = getInputDirection()
+	
 	for(let i=snakeBody.length-2; i>=0; i--){
 		snakeBody[i+1] = {...snakeBody[i]};
 	}
-	snakeBody[0].x +=0;
-	snakeBody[0].y +=1;
+	
+	snakeBody[0].x += inputDirection.x;
+	snakeBody[0].y += inputDirection.y;
 }
 
 export function draw(gameBoard){
